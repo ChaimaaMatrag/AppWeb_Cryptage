@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App Cryptage</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .crypt {
+            background: #22c55e;
+        }
+
+        .decrypt {
+            background: #3b82f6;
+        }
+
+        .hash {
+            background: #f59e0b;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>🔐 App Cryptage</h2>
+
+        <form method="POST">
+            <input type="text" name="text" placeholder="Entrer le texte" required>
+            <input type="number" name="key" placeholder="Clé XOR (0-255)">
+
+            <br>
+            <button class="crypt" name="crypt">Chiffrer</button>
+            <button class="decrypt" name="decrypt">Déchiffrer</button>
+            <button class="hash" name="hash">SHA-256</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <strong>Résultat :</strong><br>
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
